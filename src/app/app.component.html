@@ -3,5 +3,6 @@
         <h1>Recipe Book</h1>
         <p class="description">Keeping track of the recipes I want to watch and try.</p>
     </header>
-    <rb-recipe-item [recipeItem]="firstRecipeItem"></rb-recipe-item>
+    <rb-recipe-item (delete)="onRecipeItemDelete($event)" 
+        [recipeItem]="firstRecipeItem"></rb-recipe-item>
 </section>

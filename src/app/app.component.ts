@@ -14,4 +14,8 @@ export class AppComponent{
         watchedOn: 1294166565384,
         isFavorite: false
     }
+
+    onRecipeItemDelete(recipeItem) {
+        //delete a recipe item
+    }
 }

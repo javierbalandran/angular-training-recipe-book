@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'rb-recipe-item',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent{
-    name = "PB&J";
+    @Input() recipeItem;
 
     onDelete() {
         console.log("delete");

@@ -1,4 +1,6 @@
 <section>
-  <rb-recipe-item (delete)="onRecipeItemDelete($event)" 
-        [recipeItem]="recipeItems[2]"></rb-recipe-item>
+  <rb-recipe-item
+    *ngFor = "let recipeItem of recipeItems" 
+    (delete)="onRecipeItemDelete($event)" 
+    [recipeItem]="recipeItem"></rb-recipe-item>
 </section>

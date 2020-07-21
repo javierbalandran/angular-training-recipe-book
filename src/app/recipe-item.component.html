@@ -1,5 +1,5 @@
 <h2>{{ recipeItem.name }}</h2>
-<div>{{ recipeItem.watchedOn }}</div>
+<div *ngIf="recipeItem.isFavorite">{{ recipeItem.watchedOn }}</div>
 <div>{{ recipeItem.category }}</div>
 <div>{{ recipeItem.year }}</div>
 <div class="tools">

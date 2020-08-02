@@ -2,5 +2,6 @@
   <rb-recipe-item
     *ngFor = "let recipeItem of recipeItems" 
     (delete)="onRecipeItemDelete($event)" 
-    [recipeItem]="recipeItem"></rb-recipe-item>
+    [recipeItem]="recipeItem"
+    [ngClass]="{ 'medium-youtube': recipeItem.medium === 'YouTube', 'medium-article': recipeItem.medium === 'Article' }"></rb-recipe-item>
 </section>

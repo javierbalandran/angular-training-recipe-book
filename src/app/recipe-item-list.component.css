@@ -7,10 +7,10 @@
 header {
   color: #c6c5c3;
 }
-header.medium-movies {
+header.medium-youtube {
   color: #53ace4;
 }
-header.medium-series {
+header.medium-article {
   color: #45bf94;
 }
 header > h2 {
@@ -25,7 +25,7 @@ section {
   flex-flow: row wrap;
   align-content: flex-start;
 }
-section > media-item {
+section > recipe-item {
   margin: 10px;
 }
 footer {

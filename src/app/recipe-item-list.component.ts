@@ -10,6 +10,7 @@ export class RecipeItemListComponent{
         {
             id: 1,
             name: 'Green Smoothie',
+            medium: 'Article',
             category: 'Breakfast',
             year: 2010,
             watchedOn: 1294166565384,
@@ -18,6 +19,7 @@ export class RecipeItemListComponent{
         {
             id: 2,
             name: 'Ham Sandwich',
+            medium: 'YouTube',
             category: 'Lunch',
             year: 2014,
             watchedOn: 12122020,
@@ -26,6 +28,7 @@ export class RecipeItemListComponent{
         {
             id: 3,
             name: 'Pancakes',
+            medium: 'Article',
             category: 'Breakfast',
             year: 2018,
             watchedOn: 823774,
@@ -34,6 +37,7 @@ export class RecipeItemListComponent{
         {
             id: 4,
             name: 'Chicken Teriyaki',
+            medium: 'YouTube',
             category: 'Dinner',
             year: 2012,
             watchedOn: 3481847293,

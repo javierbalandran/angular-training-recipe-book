@@ -1,4 +1,7 @@
 <section>
+  <header>
+    <div>{{ recipeItems | categoryList }}</div>
+  </header>
   <rb-recipe-item
     *ngFor = "let recipeItem of recipeItems" 
     (delete)="onRecipeItemDelete($event)" 

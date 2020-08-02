@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { RecipeItemComponent } from './recipe-item.component';
 import { RecipeItemListComponent } from './recipe-item-list.component';
 import { FavoriteDirective } from './favorite.directive';
+import { CategoryListPipe } from './category-list.pipe';
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import { FavoriteDirective } from './favorite.directive';
         AppComponent,
         RecipeItemComponent,
         RecipeItemListComponent,
-        FavoriteDirective
+        FavoriteDirective,
+        CategoryListPipe
     ],
     bootstrap: [
         AppComponent

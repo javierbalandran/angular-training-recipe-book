@@ -22,7 +22,7 @@ export class RecipeItemListComponent{
             medium: 'YouTube',
             category: 'Lunch',
             year: 2014,
-            watchedOn: 12122020,
+            watchedOn: null,
             isFavorite: false
         },
         {
@@ -31,7 +31,7 @@ export class RecipeItemListComponent{
             medium: 'Article',
             category: 'Breakfast',
             year: 2018,
-            watchedOn: 823774,
+            watchedOn: null,
             isFavorite: true
         },
         {
@@ -40,7 +40,7 @@ export class RecipeItemListComponent{
             medium: 'YouTube',
             category: 'Dinner',
             year: 2012,
-            watchedOn: 3481847293,
+            watchedOn: 1457166565384,
             isFavorite: true
         }
     ];

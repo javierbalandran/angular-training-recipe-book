@@ -1,6 +1,6 @@
-<h2>{{ recipeItem.name }}</h2>
+<h2>{{ recipeItem.name | slice: 0: 10  | uppercase}}</h2>
 <div>{{ recipeItem.medium }}</div>
-<div *ngIf="recipeItem.isFavorite">{{ recipeItem.watchedOn }}</div>
+<div *ngIf="recipeItem.watchedOn">{{ recipeItem.watchedOn | date: 'shortDate' }}</div>
 <div>{{ recipeItem.category }}</div>
 <div>{{ recipeItem.year }}</div>
 <div class="tools">

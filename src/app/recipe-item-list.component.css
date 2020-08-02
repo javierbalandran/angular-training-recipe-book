@@ -25,7 +25,7 @@ section {
   flex-flow: row wrap;
   align-content: flex-start;
 }
-section > recipe-item {
+section > recipeItem {
   margin: 10px;
 }
 footer {

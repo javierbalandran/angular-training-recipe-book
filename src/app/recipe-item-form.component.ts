@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { RecipeItemService } from './recipe-item.service';
 
 @Component({
   selector: 'rb-recipe-item-form',
@@ -9,7 +10,8 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class RecipeItemFormComponent implements OnInit {
     form: FormGroup;
 
-    constructor(private formBuilder: FormBuilder) {}
+    constructor(private formBuilder: FormBuilder,
+        private recipeItemService: RecipeItemService) {}
 
     ngOnInit() {
         this.form = this.formBuilder.group({
@@ -43,6 +45,6 @@ export class RecipeItemFormComponent implements OnInit {
     }
 
     onSubmit(recipeItem) {
-        console.log(recipeItem);
+        this.recipeItemService.add(recipeItem);
     }
 }

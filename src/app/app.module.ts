@@ -7,7 +7,6 @@ import { RecipeItemListComponent } from './recipe-item-list.component';
 import { FavoriteDirective } from './favorite.directive';
 import { CategoryListPipe } from './category-list.pipe';
 import { RecipeItemFormComponent } from './recipe-item-form.component';
-import { RecipeItemService } from './recipe-item.service';
 
 @NgModule({
     imports: [
@@ -21,9 +20,6 @@ import { RecipeItemService } from './recipe-item.service';
         FavoriteDirective,
         CategoryListPipe,
         RecipeItemFormComponent
-    ],
-    providers: [
-        RecipeItemService
     ],
     bootstrap: [
         AppComponent

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { RecipeItemService } from './recipe-item.service';
 
@@ -11,7 +11,8 @@ export class RecipeItemFormComponent implements OnInit {
     form: FormGroup;
 
     constructor(private formBuilder: FormBuilder,
-        private recipeItemService: RecipeItemService) {}
+        private recipeItemService: RecipeItemService,
+        @Inject('lookupListToken') public lookupLists) {}
 
     ngOnInit() {
         this.form = this.formBuilder.group({

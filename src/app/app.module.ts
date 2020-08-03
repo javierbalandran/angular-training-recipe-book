@@ -8,6 +8,10 @@ import { FavoriteDirective } from './favorite.directive';
 import { CategoryListPipe } from './category-list.pipe';
 import { RecipeItemFormComponent } from './recipe-item-form.component';
 
+const lookupLists = {
+    mediums: ['Youtube', 'Article']
+};
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -20,6 +24,9 @@ import { RecipeItemFormComponent } from './recipe-item-form.component';
         FavoriteDirective,
         CategoryListPipe,
         RecipeItemFormComponent
+    ],
+    providers: [
+        { provide: 'lookupListToken', useValue: lookupLists }
     ],
     bootstrap: [
         AppComponent

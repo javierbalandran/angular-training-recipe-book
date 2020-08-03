@@ -7,10 +7,7 @@ import { RecipeItemListComponent } from './recipe-item-list.component';
 import { FavoriteDirective } from './favorite.directive';
 import { CategoryListPipe } from './category-list.pipe';
 import { RecipeItemFormComponent } from './recipe-item-form.component';
-
-const lookupLists = {
-    mediums: ['Youtube', 'Article']
-};
+import { lookupListToken, lookupLists } from './providers';
 
 @NgModule({
     imports: [
@@ -26,7 +23,7 @@ const lookupLists = {
         RecipeItemFormComponent
     ],
     providers: [
-        { provide: 'lookupListToken', useValue: lookupLists }
+        { provide: lookupListToken, useValue: lookupLists }
     ],
     bootstrap: [
         AppComponent

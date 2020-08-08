@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -40,11 +42,25 @@ export class RecipeItemService {
             year: 2012,
             watchedOn: 1457166565384,
             isFavorite: true
+        },
+        {
+            id: 5,
+            name: 'Shrimp Scampi',
+            medium: 'YouTube',
+            category: 'Dinner',
+            year: 2015,
+            watchedOn: 1457166565384,
+            isFavorite: false
         }
     ];
 
+    constructor(private http: HttpClient) {}
+
     get() {
-        return this.recipeItems;
+        return this.http.get<RecipeItemResponse>('recipeitems')
+            .pipe(map(response => {
+                return response.recipeItems;
+            }));
     }
 
     add(recipeItem) {
@@ -57,4 +73,18 @@ export class RecipeItemService {
             this.recipeItems.splice(index, 1);
         }
     }
+}
+
+interface RecipeItem {
+    id: number;
+    name: string;
+    medium: string;
+    category: string;
+    year: number;
+    watchedOn: number;
+    isFavorite: boolean;
+}
+
+interface RecipeItemResponse {
+    recipeItems: RecipeItem[];
 }

@@ -12,7 +12,10 @@ export class RecipeItemListComponent implements OnInit {
     constructor(private recipeItemService: RecipeItemService) {}
 
     ngOnInit() {
-        this.recipeItems = this.recipeItemService.get();
+        this.recipeItemService.get()
+            .subscribe(recipeItems => {
+                this.recipeItems = recipeItems;
+            });
     }
 
     onRecipeItemDelete(recipeItem) { 

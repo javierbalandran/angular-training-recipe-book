@@ -11,8 +11,8 @@ export class MockXHRBackend implements HttpBackend {
       year: 2010,
       watchedOn: 1294166565384,
       isFavorite: false
-  },
-  {
+    },
+    {
       id: 2,
       name: 'Ham Sandwich',
       medium: 'YouTube',
@@ -20,8 +20,8 @@ export class MockXHRBackend implements HttpBackend {
       year: 2014,
       watchedOn: null,
       isFavorite: false
-  },
-  {
+    },
+    {
       id: 3,
       name: 'Pancakes',
       medium: 'Article',
@@ -29,8 +29,8 @@ export class MockXHRBackend implements HttpBackend {
       year: 2018,
       watchedOn: null,
       isFavorite: true
-  },
-  {
+    },
+    {
       id: 4,
       name: 'Chicken Teriyaki',
       medium: 'YouTube',
@@ -38,7 +38,8 @@ export class MockXHRBackend implements HttpBackend {
       year: 2012,
       watchedOn: 1457166565384,
       isFavorite: true
-  }, {
+    },
+    {
       id: 5,
       name: 'Shrimp Scampi',
       medium: 'YouTube',

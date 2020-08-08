@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpXhrBackend } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RecipeItemComponent } from './recipe-item.component';
@@ -8,11 +9,13 @@ import { FavoriteDirective } from './favorite.directive';
 import { CategoryListPipe } from './category-list.pipe';
 import { RecipeItemFormComponent } from './recipe-item-form.component';
 import { lookupListToken, lookupLists } from './providers';
+import { MockXHRBackend } from './mock-xhr-backend';
 
 @NgModule({
     imports: [
         BrowserModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
     declarations: [
         AppComponent,
@@ -23,7 +26,8 @@ import { lookupListToken, lookupLists } from './providers';
         RecipeItemFormComponent
     ],
     providers: [
-        { provide: lookupListToken, useValue: lookupLists }
+        { provide: lookupListToken, useValue: lookupLists },
+        { provide: HttpXhrBackend, useClass: MockXHRBackend }
     ],
     bootstrap: [
         AppComponent

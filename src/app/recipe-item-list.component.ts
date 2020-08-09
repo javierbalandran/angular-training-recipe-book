@@ -19,7 +19,6 @@ export class RecipeItemListComponent implements OnInit {
     onRecipeItemDelete(recipeItem: RecipeItem) { 
         this.recipeItemService.delete(recipeItem)
             .subscribe(() => {
-                console.log('Reload List')
                 this.getRecipeItems(this.medium);
             });
     }

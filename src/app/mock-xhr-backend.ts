@@ -104,9 +104,7 @@ export class MockXHRBackend implements HttpBackend {
   _deleteRecipeItem(id) {
     const recipeItem = this.recipeItems.find(i => i.id === id);
     const index = this.recipeItems.indexOf(recipeItem);
-    console.log('id - ' + id);
     if (index >= 0) {
-      console.log('deleting...' + this.recipeItems[index])
       this.recipeItems.splice(index, 1);
     }
   }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -15,16 +16,25 @@ export class RecipeItemService {
         return this.http.get<RecipeItemResponse>('recipeItems', getOptions)
             .pipe(
                 map((response: RecipeItemResponse) => {
-                return response.recipeItems;
-            }));
+                    return response.recipeItems;
+                }),
+                catchError(this.handleError)
+            );
     }
 
     add(recipeItem: RecipeItem) {
-        return this.http.post('recipeitems', recipeItem);
+        return this.http.post('recipeitems', recipeItem)
+            .pipe(catchError(this.handleError));
     }
 
     delete(recipeItem: RecipeItem) {
-        return this.http.delete(`recipeitems/${recipeItem.id}`);
+        return this.http.delete(`recipeitems/${recipeItem.id}`)
+            .pipe(catchError(this.handleError));;
+    }
+
+    private handleError(error: HttpErrorResponse) {
+        console.log(error.message);
+        return throwError('A data error occurred, please try again');
     }
 }
 

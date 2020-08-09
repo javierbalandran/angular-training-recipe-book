@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RecipeItemService, RecipeItem } from './recipe-item.service';
 
 @Component({
@@ -10,10 +11,18 @@ export class RecipeItemListComponent implements OnInit {
     medium = '';
     recipeItems: RecipeItem[];
 
-    constructor(private recipeItemService: RecipeItemService) {}
+    constructor(private recipeItemService: RecipeItemService,
+        private activatedRoute: ActivatedRoute) {}
 
     ngOnInit() {
-        this.getRecipeItems(this.medium);
+        this.activatedRoute.paramMap
+            .subscribe(paramMap => {
+                let medium = paramMap.get('medium');
+                if (medium.toLowerCase() === 'all') {
+                    medium = '';
+                }
+                this.getRecipeItems(medium);
+            })
     }
 
     onRecipeItemDelete(recipeItem: RecipeItem) { 

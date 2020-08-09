@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { RecipeItemService } from './recipe-item.service';
+import { RecipeItemService, RecipeItem } from './recipe-item.service';
 import { lookupListToken } from './providers';
 
 @Component({
@@ -13,7 +14,8 @@ export class RecipeItemFormComponent implements OnInit {
 
     constructor(private formBuilder: FormBuilder,
         private recipeItemService: RecipeItemService,
-        @Inject(lookupListToken) public lookupLists) {}
+        @Inject(lookupListToken) public lookupLists,
+        private router: Router) {}
 
     ngOnInit() {
         this.form = this.formBuilder.group({
@@ -46,8 +48,10 @@ export class RecipeItemFormComponent implements OnInit {
         }
     }
 
-    onSubmit(recipeItem) {
+    onSubmit(recipeItem: RecipeItem) {
         this.recipeItemService.add(recipeItem)
-            .subscribe();
+            .subscribe(() => {
+                this.router.navigate(['/', recipeItem.medium])
+            });
     }
 }

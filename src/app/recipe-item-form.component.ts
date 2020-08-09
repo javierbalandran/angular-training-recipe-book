@@ -47,6 +47,7 @@ export class RecipeItemFormComponent implements OnInit {
     }
 
     onSubmit(recipeItem) {
-        this.recipeItemService.add(recipeItem);
+        this.recipeItemService.add(recipeItem)
+            .subscribe();
     }
 }

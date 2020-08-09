@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { RecipeItemService, RecipeItem } from './recipe-item.service';
-import { lookupListToken } from './providers';
+import { RecipeItemService, RecipeItem } from '../recipe-item.service';
+import { lookupListToken } from '../providers';
 
 @Component({
   selector: 'rb-recipe-item-form',

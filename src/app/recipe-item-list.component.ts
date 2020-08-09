@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeItemService } from './recipe-item.service';
+import { RecipeItemService, RecipeItem } from './recipe-item.service';
 
 @Component({
     selector: 'rb-recipe-item-list',
@@ -7,18 +7,24 @@ import { RecipeItemService } from './recipe-item.service';
     styleUrls: ['./recipe-item-list.component.css']
 })
 export class RecipeItemListComponent implements OnInit {
-    recipeItems;
+    medium = '';
+    recipeItems: RecipeItem[];
 
     constructor(private recipeItemService: RecipeItemService) {}
 
     ngOnInit() {
-        this.recipeItemService.get()
-            .subscribe(recipeItems => {
-                this.recipeItems = recipeItems;
-            });
+        this.getRecipeItems(this.medium);
     }
 
     onRecipeItemDelete(recipeItem) { 
         this.recipeItemService.delete(recipeItem);
+    }
+
+    getRecipeItems(medium: string) {
+        this.medium = medium;
+        this.recipeItemService.get(medium)
+            .subscribe(recipeItems => {
+                this.recipeItems = recipeItems;
+            });
     }
 }

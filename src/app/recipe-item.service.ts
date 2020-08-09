@@ -56,9 +56,13 @@ export class RecipeItemService {
 
     constructor(private http: HttpClient) {}
 
-    get() {
-        return this.http.get<RecipeItemResponse>('recipeitems')
-            .pipe(map(response => {
+    get(medium) {
+        const getOptions = {
+            params: {medium: medium}
+        };
+        return this.http.get<RecipeItemResponse>('recipeItems', getOptions)
+            .pipe(
+                map((response: RecipeItemResponse) => {
                 return response.recipeItems;
             }));
     }
@@ -75,7 +79,7 @@ export class RecipeItemService {
     }
 }
 
-interface RecipeItem {
+export interface RecipeItem {
     id: number;
     name: string;
     medium: string;

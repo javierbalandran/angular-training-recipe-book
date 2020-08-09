@@ -1,3 +1,14 @@
+<nav>
+  <a (click)="getRecipeItems('')">
+    <img src="assets/04.png" class="icon" />
+  </a>
+  <a (click)="getRecipeItems('YouTube')">
+    <img src="assets/03.png" class="icon" />
+  </a>
+  <a (click)="getRecipeItems('Article')">
+    <img src="assets/02.png" class="icon" />
+  </a>
+</nav>
 <header>
   <div>{{ recipeItems | categoryList }}</div>
 </header>
